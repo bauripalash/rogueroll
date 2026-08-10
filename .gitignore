@@ -4,3 +4,6 @@ build/
 *.gba
 *.lnk
 *.elf
+
+
+*.tiled-session

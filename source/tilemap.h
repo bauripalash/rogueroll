@@ -17,9 +17,6 @@
 #define TEXTUI_SBB             31
 #define TEXTUI_CBB             1
 
-extern unsigned char Map1Tilemap[];
-extern unsigned int Map1Len;
-
 static const u8 levelMain[TILEMAP_LOGICAL_HEIGHT][TILEMAP_LOGICAL_WIDTH] = {
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     {2, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1},
@@ -33,5 +30,10 @@ static const u8 levelMain[TILEMAP_LOGICAL_HEIGHT][TILEMAP_LOGICAL_WIDTH] = {
     {1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1},
 };
 
-void LoadTilemapIntoBg(const u8 *tilemap, int width, int height, int sbb);
+void LoadTilesets(const unsigned int *tiles, int len, int cbb);
+void LoadTilemap(
+    const unsigned char *map, uint len, int width, int height, int sbb
+);
+
+void LoadMainMap(void);
 #endif

@@ -29,3 +29,6 @@ fclean:
 	rm *.sav
 	rm *.gba
 	rm *.elf
+
+gen_basemap:
+	tiled --export-map gba assets/maps/base_map.tmx source/maps/basemap.c

@@ -16,7 +16,7 @@ int fc = 0;
 
 Sprite hood;
 
-static void loadBaseMap(void) {}
+static void loadBaseMap(void) { LoadMainMap(); }
 
 static void loadPalettes(void) {
     LoadPaletteOnly(
