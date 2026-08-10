@@ -6,6 +6,7 @@
 #include "palette.h"
 
 #include <tonc.h>
+#include "external/mgba.h"
 
 int SpriteTileIndex = 0;
 bool PaletteLoaded = false;
@@ -14,7 +15,15 @@ OBJ_ATTR GameObjBuffer[OBJ_BUFFER_MAX];
 OBJ_AFFINE *GameAffBuffer = (OBJ_AFFINE *)GameObjBuffer;
 int fc = 0;
 
+BoardCell BoardCellList[MAX_BOARD_CELL];
+
 Sprite hood;
+static int cellCount = 26;
+static void genBoardData(void){
+	int ci = 0;
+	for (ci = 0; ci < cellCount; ci++) {
+	}
+}
 
 static void loadBaseMap(void) { LoadMainMap(); }
 
@@ -38,6 +47,7 @@ void SetupGame(void) {
     oam_init(GameObjBuffer, OBJ_BUFFER_MAX);
     loadPalettes();
     loadBaseMap();
+	genBoardData();
 
     hood = LoadSprite(
         (SpriteRes){
@@ -48,6 +58,7 @@ void SetupGame(void) {
         SPRITE_SIZE_16x16
     );
     SpriteSetAnimation(&hood, &idle);
+    SpriteSetPos(&hood, 48, 24);
 }
 
 char buf[256];
@@ -63,6 +74,7 @@ void UpdateGame(void) {
 }
 
 void RunGame(void) {
+	mgba_open();
     irq_init(NULL);
     irq_enable(II_VBLANK);
 
