@@ -32,3 +32,6 @@ fclean:
 
 gen_basemap:
 	tiled --export-map gba assets/maps/base_map.tmx source/maps/basemap.c
+
+gen_tilespng:
+	aseprite -b assets/artworks/roguetiles.aseprite --save-as graphics/basetiles.png

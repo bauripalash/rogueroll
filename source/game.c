@@ -2,7 +2,7 @@
 #include "sprite.h"
 #include "tilemap.h"
 
-#include "hoodknight.h"
+#include "roguehood.h"
 #include "palette.h"
 
 #include <tonc.h>
@@ -51,8 +51,8 @@ void SetupGame(void) {
 
     hood = LoadSprite(
         (SpriteRes){
-            .tiles = hoodknightTiles,
-            .tilesLen = hoodknightTilesLen,
+            .tiles = roguehoodTiles,
+            .tilesLen = roguehoodTilesLen,
             .frames = 8
         },
         SPRITE_SIZE_16x16
