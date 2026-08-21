@@ -4,7 +4,7 @@ jobs := `nproc`
 emulator := "mgba"
 
 run: build
-    {{emulator}} {{target}}.gba --scale 4 &
+    {{emulator}} -l 14 {{target}}.gba --scale 4 &
 
 build:
     make -f Makefile -j{{jobs}}

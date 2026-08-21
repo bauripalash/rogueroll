@@ -1,0 +1,16 @@
+# 4bpp image
+-gB4
+# Tiled
+-gt
+# from monogram font size -> width
+#-Mw8
+# from monogram font size -> height
+#-Mh16
+# Tile order -> column
+#-tc
+# array as unsigned char
+-U8
+# header and c
+-ftc
+-fh
+#-p!
